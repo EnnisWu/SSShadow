@@ -1,8 +1,32 @@
 # 🌤SSShadow: Android 阴影库🌥<br>👻不占位🧚、💃支持动画🕺
 
+[![](https://jitpack.io/v/EnnisWu/SSShadow.svg)](https://jitpack.io/#EnnisWu/SSShadow)
+
 1. ShadowLayer 支持 ConstraintLayout🦄
 2. ShadowDecoration 支持 RecyclerView🐳
 3. ShadowWrapperLayout 支持所有布局（备选方案，优先使用 ShadowLayer）🐡
+
+## Installation
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+```groovy
+	allprojects {
+		repositories {
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Step 2. Add the dependency
+
+```
+	dependencies {
+	        implementation 'com.github.EnnisWu:SSShadow:0.0.1'
+	}
+```
 
 ## Quick Start
 
