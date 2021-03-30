@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2021 Ennis Wu. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.enniswu.ssshadow.demo.RadioGroup
+        android:id="@+id/rgManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvLinear,tvGrid,tvStaggeredGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/tvLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/linear"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/tvGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:checked="false"
+        android:text="@string/grid"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvLinear"
+        app:layout_constraintTop_toTopOf="@id/tvLinear"/>
+
+    <RadioButton
+        android:id="@+id/tvStaggeredGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:checked="false"
+        android:text="@string/staggered_grid"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvGrid"
+        app:layout_constraintTop_toTopOf="@id/tvLinear"/>
+
+    <com.enniswu.ssshadow.demo.RadioGroup
+        android:id="@+id/rgOrientation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvHorizontal,tvVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/tvHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/horizontal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLinear"/>
+
+    <RadioButton
+        android:id="@+id/tvVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:checked="true"
+        android:text="@string/vertical"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvHorizontal"
+        app:layout_constraintTop_toTopOf="@id/tvHorizontal"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchReverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reverse"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvHorizontal"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="tvBoundLeft,sBoundLeft,tvBoundTop,sBoundTop,tvBoundRight,sBoundRight,tvBoundBottom,sBoundBottom,tvBoundInner,sBoundInner,tvBoundInnerHorizontal,sBoundInnerHorizontal,tvBoundInnerVertical,sBoundInnerVertical,tvMainAxisPaddingEnd,sMainAxisPaddingEnd"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintTop_toBottomOf="@id/tvHorizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBoundLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_left"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_top"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_right"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_bottom"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundInner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_inner"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundInner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundInnerHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_inner_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundInnerHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvBoundInnerVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_inner_vertical"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sBoundInnerVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+    <TextView
+        android:id="@+id/tvMainAxisPaddingEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/bound_padding_end"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sMainAxisPaddingEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/color_ff1f9eff"
+        app:thumbColor="@android:color/white"
+        app:haloColor="@color/color_ff1f9eff"
+        app:tickColor="@color/color_ff027aff"
+        android:value="20"
+        android:valueFrom="0"
+        android:valueTo="40"
+        android:stepSize="1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

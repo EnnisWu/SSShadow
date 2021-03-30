@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2021 Ennis Wu. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="tvSimpleShadowLayer,tvSimpleShadowDecoration,tvSimpleShadowDecoration2,tvSimpleShadowWrapperLayout,tvSimpleShadowWrapperLayout2"
+            app:flow_verticalStyle="packed"
+            app:flow_verticalGap="15dp"
+            app:layout_constraintBottom_toTopOf="@id/flow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="tvShadowLayer,tvShadowDecoration,tvShadowWrapperLayout"
+            app:flow_verticalStyle="packed"
+            app:flow_verticalGap="15dp"
+            app:layout_constraintTop_toBottomOf="@id/flow_simple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSimpleShadowLayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_shadow_layer"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvSimpleShadowDecoration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_shadow_decoration"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvSimpleShadowDecoration2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_shadow_decoration2"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvSimpleShadowWrapperLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_shadow_wrapper_layout"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvSimpleShadowWrapperLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_shadow_wrapper_layout2"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvShadowLayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shadow_layer"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvShadowDecoration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shadow_decoration"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+        <TextView
+            android:id="@+id/tvShadowWrapperLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shadow_wrapper_layout"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:background="@drawable/shape_rectangle_gradient"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
